@@ -1,6 +1,6 @@
 ## gitbook-plugin-search-pro
 
-search-pro(支持中文的搜索)
+Gitbook search engine pro. (支持中文搜索)
 
 ### Usage
 
