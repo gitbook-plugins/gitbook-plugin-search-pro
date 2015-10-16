@@ -18,4 +18,9 @@ Put this in your book.json:
 }
 ```
 
-And you're done!
+And
+
+```
+gitbook install
+gitbook build/serve
+```
