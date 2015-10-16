@@ -1,0 +1,5 @@
+.body-inner .search-highlight{
+    font-weight: bold;
+    display: inline-block;
+    background-color: yellow;
+}
