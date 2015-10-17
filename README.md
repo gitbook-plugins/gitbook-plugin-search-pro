@@ -2,6 +2,10 @@
 
 Gitbook search engine pro. (支持中文搜索)
 
+### Demo preview
+
+![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/master/demo/show-1.gif)
+
 ### Usage
 
 Put this in your book.json:
@@ -24,3 +28,5 @@ And
 gitbook install
 gitbook build/serve
 ```
+
+Thanks: nodejieba(中文分词功能)
