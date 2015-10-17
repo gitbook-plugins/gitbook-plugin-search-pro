@@ -11,7 +11,7 @@ Put this in your book.json:
 	"plugins": ["search-pro"],
     "pluginsConfig": {
       "search-pro": {
-        "cutLib": "nodejieba",
+        "cutWordLib": "nodejieba",
         "defineWord" : ["小需求","基础建设"]
       }
     }
