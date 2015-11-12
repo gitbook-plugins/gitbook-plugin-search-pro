@@ -12,7 +12,10 @@ Put this in your book.json:
 
 ```js
 {
-	"plugins": ["search-pro"],
+	"plugins": [
+      "-search",
+      "search-pro"
+    ],
     "pluginsConfig": {
       "search-pro": {
         "cutWordLib": "nodejieba",
