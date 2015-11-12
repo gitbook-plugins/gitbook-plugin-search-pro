@@ -1,9 +1,33 @@
-require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sidebar","core/navigation","core/loading"], function (gitbook,state,events,_,storage,sidebar,navigation,loading) {
-    
-    var 
-        pluginConfig,
-        indexData
-        ;
+require(['gitbook', 'lodash'], function(gitbook, _) {
+    var events = gitbook.events;
+    var sidebar = gitbook.sidebar;
+    var state = gitbook.state;
+    var storage = gitbook.storage;
+
+    var pluginConfig;
+    var indexData;
+    var $searchForm;
+
+    // Create search form
+    function createForm(value) {
+        if ($searchForm) $searchForm.remove();
+
+        $searchForm = $('<div>', {
+            'class': 'book-search',
+            'role': 'search'
+        });
+
+        $searchInput = $('<input>', {
+            'type': 'text',
+            'class': 'form-control',
+            'val': value,
+            'placeholder': 'Type to search'
+        });
+
+        $searchInput.appendTo($searchForm);
+        $searchForm.prependTo(gitbook.state.$book.find('.book-summary'));
+    }
+
 
     // 高亮文本
     var highLightPageInner = function(keyword) { 
@@ -14,7 +38,7 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
         var firstWordTop = $('.search-highlight')[0].offsetTop;
         $('.body-inner').scrollTop(firstWordTop);
         
-    }
+    };
 
     // 取消高亮
     var removeHighLight = function() { 
@@ -24,7 +48,7 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
         
         // 回到顶端
         // $('.body-inner').scrollTop(0);
-    }
+    };
     
     // 判断 searchbar 有没有开启
     var isSearchOpen = function() {
@@ -46,7 +70,7 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
         }).value();
         
         return matchPaths;
-    }
+    };
     
     // 切换 search bar
     var toggleSearch = function(_state) {
@@ -71,6 +95,7 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
     // 还原搜索框状态
     var recoverSearch = function() {
         var keyword = storage.get("keyword", "");
+        createForm(keyword);
         if(keyword.length > 0) {
             
             // 是否收起search
@@ -91,19 +116,6 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
     
     // 初始化函数
     var init = function () {
-        
-        // 清除原始的搜索相关事件
-        $(document).off("click", ".book-header .toggle-search");
-        $(document).off("keyup", ".book-search input");
-        
-        // 绑定新的搜索函数
-        $(document).on("click", ".book-header .toggle-search",function(e){
-            
-            e.preventDefault();
-            toggleSearch();
-            
-        });
-
         // 在SearchBar中输入
         $(document).on("keyup", ".book-search input", function(e) {
 
@@ -130,16 +142,25 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
                 toggleSearch(false);
                 return;
             }
-        })
+        });
         
         // 启动载入索引
         $.getJSON(state.basePath + "/search_pro_index.json").then(function(data){
             indexData = data;
             events.trigger("page.loadedSearchProIndex");
         });
+
+        // Create search form
+        createForm();
+        // Create the toggle search button
+        gitbook.toolbar.createButton({
+            icon: 'fa fa-search',
+            label: 'Search',
+            position: 'left',
+            onClick: toggleSearch
+        });
         
     };
-
 
     // ----- 声明周期事件 ------
     
@@ -158,5 +179,4 @@ require(['gitbook',"core/state","core/events","lodash","utils/storage","core/sid
             recoverSearch();
         });
     });
-
 });
