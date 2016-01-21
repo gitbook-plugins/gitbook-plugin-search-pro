@@ -12,7 +12,7 @@ Put this in your book.json:
 
 ```js
 {
-	"plugins": [
+    "plugins": [
       "-search",
       "search-pro"
     ],
