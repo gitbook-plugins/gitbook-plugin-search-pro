@@ -28,8 +28,8 @@ Put this in your book.json:
 And
 
 ```
-npm install
-npm build/serve
+gitbook install
+gitbook build/serve
 ```
 
 Thanks: nodejieba(中文分词功能)
