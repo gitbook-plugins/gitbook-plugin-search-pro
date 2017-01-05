@@ -2,6 +2,10 @@
 
 Gitbook search engine pro. (支持中文搜索)
 
+Gitbook > 3.0 新版功能请移步至：
+https://github.com/lwdgit/gitbook-plugin-search-plus
+
+
 ### Demo preview
 
 ![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/master/demo/show-1.gif)
