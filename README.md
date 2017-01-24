@@ -41,7 +41,7 @@ After installed gitbook.
     
 ```
     > git clone git@github.com:gitbook-plugins/gitbook-plugin-search-pro.git -b gh-pages
-    > cd ./gitbook-plugin-search-pro.git
+    > cd ./gitbook-plugin-search-pro
     > npm install
     > gitbook serve ./
 ```
