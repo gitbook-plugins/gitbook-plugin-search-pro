@@ -1,53 +1,31 @@
-## gitbook-plugin-search-pro
+# react-webpack-cookbook - A cookbook for using Webpack with React JS.
 
-Gitbook search engine pro. (支持中文搜索)
+> [Go to cookbook](https://christianalfoni.github.io/react-webpack-cookbook/)
 
-You can search any characters(utf-8) and highlight it in your GitBook, not only english(exp:Chinese).
+> [中文版](https://fakefish.github.io/react-webpack-cookbook/)
 
-### Demo preview
+## Contributing
 
-![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/master/demo/show-1.gif)
+If you notice something to improve, the easiest way to do that is to
 
-### Usage
+1. Fork this repo
+2. Set up a branch
+3. Make the changes (see `/content`)
+4. Submit a PR
 
-Before use this plugin, you should disable the default search plugin first, 
-Here is a `book.json` configuration example:
+So all in all it's just a regular GitHub PR flow.
 
-```js
-{
-    "plugins": [
-      "-lunr", "-search", "search-pro"
-    ]
-}
-```
+Alternatively you can [open an issue](https://github.com/christianalfoni/react-webpack-cookbook/issues/new) and we'll look into it.
 
-> Note: Only gitbook >= 3.0.0 support
+Note that `gh-pages` branch and wiki content gets generated based on the main repository content.
 
+## Gitbook Generator
 
-### Example
+The generator converts the wiki content to Gitbook (standalone site). In this case it is pushed to `gh-pages`. Use it as follows:
 
-Open [https://lwdgit.github.io/gitbook-plugin-search-plus/](https://lwdgit.github.io/gitbook-plugin-search-plus/book/?q=%E8%BF%99%E6%9C%AC%E5%B0%8F%E4%B9%A6%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E5%BC%95%E5%AF%BC%E4%BD%A0%E8%BF%9B%E5%85%A5%20React%20%E5%92%8C%20Webpack%20%E7%9A%84%E4%B8%96%E7%95%8C) or test it by yourself
+1. `npm install`
+2. `npm run generate-gitbook`
 
-```
-    > git clone git@github.com:lwdgit/gitbook-plugin-search-plus.git -b gh-pages
-    > cd gitbook-plugin-search-plus
-    > npm install
-    > npm start
-```
+This should generate `/gh-pages`. You can serve that directory through some static server (ie. hit `serve` at `/gh-pages`).
 
-And then open http://127.0.0.1:4000
-
-
-### Preview
-
-[![](./search.gif)](https://lwdgit.github.io/gitbook-plugin-search-plus/)
-[![](./search2.gif)](https://lwdgit.github.io/gitbook-plugin-search-plus/)
-[![](./search3.gif)](https://lwdgit.github.io/gitbook-plugin-search-plus/book/?q=%E8%BF%99%E6%9C%AC%E5%B0%8F%E4%B9%A6%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E5%BC%95%E5%AF%BC%E4%BD%A0%E8%BF%9B%E5%85%A5%20React%20%E5%92%8C%20Webpack%20%E7%9A%84%E4%B8%96%E7%95%8C)
-
-
-### Thanks:
-* [lwdgit](https://github.com/lwdgit/gitbook-plugin-search-plus)
-* [gitbook-plugin-lunr](https://github.com/GitbookIO/plugin-lunr)
-* [gitbook-plugin-search](https://github.com/GitbookIO/plugin-search)
-* [mark.js](https://github.com/julmot/mark.js)
-
+It is possible to deploy the book by hitting `npm run deploy-gitbook`. This will update `gh-pages` branch.

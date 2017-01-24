@@ -1,27 +1,31 @@
 {
-  "name": "gitbook-plugin-search-pro",
-  "version": "2.0.0",
-  "description": "Gitbook search engine pro. (支持中文搜索)",
-  "author": {
-    "name": "xunuo",
-    "email": "i@xunuo.com"
+  "name": "react-webpack-cookbook",
+  "version": "0.0.0",
+  "description": "React Webpack cookbook",
+  "main": "./index.js",
+  "devDependencies": {
+    "gitbook": "^3.2.2",
+    "gitbook-cli": "^2.3.0",
+    "gitbook-plugin-search-pro": "^2.0.1",
+    "gitbook-plugin-fontsettings": "^2.0.0",
+    "pre-commit": "^1.2.2"
   },
-  "repository": "gitbook-plugins/gitbook-plugin-search-pro",
+  "pre-commit": {
+    "run": ["build", "commit"],
+    "silent": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christianalfoni/react-webpack-cookbook.git"
+  },
   "keywords": [
-    "中文",
-    "搜索",
-    "chinese",
-    "gitbook",
-    "search",
-    "utf-8"
+    "react",
+    "webpack"
   ],
-  "engines": {
-    "gitbook": "*"
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christianalfoni/react-webpack-cookbook/issues"
   },
-  "dependencies": {
-    "lodash": "^3.10.1",
-    "nodejieba": "^1.4.1"
-  },
-  "analyze": true,
-  "license": "MIT"
+  "homepage": "https://github.com/christianalfoni/react-webpack-cookbook"
 }
