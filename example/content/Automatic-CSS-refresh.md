@@ -1,0 +1,3 @@
+When **webpack-dev-server** is running with [Automatic browser refresh](Automatic-browser-refresh) the CSS will also update, but a bit differently. When you do a change to a CSS file the style tag belonging to that file will be updated with the new content... without a refresh!
+
+当 **Webpack-dev-server** 在 [浏览器自动刷新](Automatic-browser-refresh) 下运行的时候，CSS 也会自动更新，不过有点不同的是，当你改变了一个 CSS 文件，属于那个文件的标签会更新新的内容但不会刷新。
