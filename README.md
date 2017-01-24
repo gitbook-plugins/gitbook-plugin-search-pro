@@ -8,6 +8,12 @@ You can search any characters(utf-8) and highlight it in your GitBook, not only 
 
 ### Demo preview
 
+ONLINE DEMO:
+
+http://gitbook-plugins.github.io/gitbook-plugin-search-pro/book/
+
+### GIFs
+
 ---
 
 ![](https://github.com/gitbook-plugins/gitbook-plugin-search-pro/blob/master/previews/search1.gif)
