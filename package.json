@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-search-pro",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Gitbook search engine pro. (支持中文搜索)",
   "author": {
     "name": "xunuo",
@@ -16,12 +16,12 @@
     "utf-8"
   ],
   "engines": {
-    "gitbook": "*"
+    "gitbook": ">=3.0.0"
   },
   "dependencies": {
-    "lodash": "^3.10.1",
-    "nodejieba": "^1.4.1"
+    "html-entities": "1.2.0"
   },
   "analyze": true,
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://xunuo.com"
 }
