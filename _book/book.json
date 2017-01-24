@@ -1,0 +1,6 @@
+{
+    "gitbook": ">=2.0.0",
+    "title": "React Webpack 小书",
+    "description": "解决 Webpack 的一些通用小问题",
+    "language": "zh-cn"
+}
