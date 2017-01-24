@@ -6,7 +6,11 @@ You can search any characters(utf-8) and highlight it in your GitBook, not only 
 
 ### Demo preview
 
-![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/master/demo/show-1.gif)
+![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/gh-pages/previews/search1.gif)
+
+![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/gh-pages/previews/search2.gif)
+
+![](https://raw.githubusercontent.com/gitbook-plugins/gitbook-plugin-search-pro/gh-pages/previews/search3.gif)
 
 ### Usage
 
