@@ -36,22 +36,17 @@ Here is a `book.js` configuration example:
 ```
 
 ### Example
-
-
+    
+After installed gitbook.
+    
 ```
-    > cd ./example
+    > git clone git@github.com:gitbook-plugins/gitbook-plugin-search-pro.git -b gh-pages
+    > cd ./gitbook-plugin-search-pro.git
     > npm install
-    > npm start
+    > gitbook serve ./
 ```
 
 And then open http://127.0.0.1:4000
-
-
-### Preview
-
-[![](./search.gif)](https://lwdgit.github.io/gitbook-plugin-search-plus/)
-[![](./search2.gif)](https://lwdgit.github.io/gitbook-plugin-search-plus/)
-[![](./search3.gif)](https://lwdgit.github.io/gitbook-plugin-search-plus/book/?q=%E8%BF%99%E6%9C%AC%E5%B0%8F%E4%B9%A6%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E5%BC%95%E5%AF%BC%E4%BD%A0%E8%BF%9B%E5%85%A5%20React%20%E5%92%8C%20Webpack%20%E7%9A%84%E4%B8%96%E7%95%8C)
 
 
 ### Thanks:
