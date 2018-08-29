@@ -3,7 +3,8 @@ var Entities = require('html-entities').AllHtmlEntities;
 var Html = new Entities();
 
 // Map of Lunr ref to document
-var documentsStore = {};
+var documentsStore = {}; // According to the language
+var documentsStoreAll = {}; // all languages
 
 module.exports = {
     book: {
@@ -48,7 +49,11 @@ module.exports = {
                 body: text
             };
 
-            documentsStore[doc.url] = doc;
+            if (!documentsStore[this.config.values.language]) {
+                documentsStore[this.config.values.language] = {};
+            }
+            documentsStore[this.config.values.language][doc.url] = doc;
+            documentsStoreAll[doc.url] = doc;
 
             return page;
         },
@@ -58,7 +63,11 @@ module.exports = {
             if (this.output.name != 'website') return;
 
             this.log.debug.ln('write search index');
-            return this.output.writeFile('search_plus_index.json', JSON.stringify(documentsStore));
+            if (this.config.values.language) {
+                return this.output.writeFile('search_plus_index.json', JSON.stringify(documentsStore[this.config.values.language]));
+            } else {
+                return this.output.writeFile('search_plus_index.json', JSON.stringify(documentsStoreAll));
+            }
         }
     }
 };
